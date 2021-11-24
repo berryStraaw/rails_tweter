@@ -3,7 +3,8 @@ class TwetsController < ApplicationController
 
   # GET /twets or /twets.json
   def index
-    @twets = Twet.all
+    @twets = Twet.all.order("created_at DESC")
+    @twet = Twet.new
   end
 
   # GET /twets/1 or /twets/1.json
